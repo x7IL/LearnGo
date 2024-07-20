@@ -2,6 +2,12 @@ package control_structures
 
 import "fmt"
 
+// Define a struct with a string and an int
+type Item struct {
+	Name  string
+	Value int
+}
+
 // Main function to demonstrate various for loop types
 func ForLoop() {
 	fmt.Println("For Loop:")
@@ -51,5 +57,18 @@ func ForLoop() {
 			continue // Skip even values
 		}
 		fmt.Println(i) // Print odd values
+	}
+
+	fmt.Println("For Loop - with struct initialization:")
+	// 7. For loop with initialization of a slice of structs
+	items := []Item{
+		{Name: "Apple", Value: 1},
+		{Name: "Banana", Value: 2},
+		{Name: "Cherry", Value: 3},
+		{Name: "Date", Value: 4},
+		{Name: "Elderberry", Value: 5},
+	}
+	for index, item := range items {
+		fmt.Printf("Index: %d, Name: %s, Value: %d\n", index, item.Name, item.Value)
 	}
 }
